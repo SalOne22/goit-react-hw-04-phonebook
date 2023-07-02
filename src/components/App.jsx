@@ -40,13 +40,13 @@ export class App extends Component {
 
   filterContacts = () => {
     return this.state.contacts.filter(({ name }) =>
-      name.includes(this.state.filter)
+      name.toLowerCase().includes(this.state.filter)
     );
   };
 
   handleFilter = evt => {
     this.setState({
-      filter: evt.target.value,
+      filter: evt.target.value.toLowerCase(),
     });
   };
 
